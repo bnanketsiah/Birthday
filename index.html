@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Bianca! 💖</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Persistent Backgrounds -->
+    <canvas id="matrixCanvas" class="bg-canvas"></canvas>
+    <canvas id="starryCanvas" class="bg-canvas hidden"></canvas>
+
+    <!-- Foreground UI layers -->
+    <div id="ui-layer">
+
+        <!-- Phase 1: Intro -->
+        <div id="phase1" class="phase active">
+            <div id="countdown" class="centered-text"></div>
+            <div id="flashing-text" class="centered-text hidden"></div>
+        </div>
+
+        <!-- Phase 2: Mascot -->
+        <div id="phase2" class="phase hidden">
+            <div id="heart-pulse" class="centered-item hidden">💖</div>
+            <div id="mascot-container" class="centered-item hidden">
+                <img src="mascot.png" alt="Cute Mascot" class="mascot-img">
+            </div>
+        </div>
+
+        <!-- Phase 3: Book -->
+        <div id="phase3" class="phase hidden">
+            <!-- Floating Typewriter Text -->
+            <div id="typewriter-container" class="typewriter-text hidden"></div>
+
+            <div id="book-container" class="book-container">
+                <div class="book" id="book">
+
+                    <!-- Back Cover -->
+                    <div class="page" id="page-back" style="z-index: 1;">
+                        <div class="page-content back-side cover-design">
+                            <h1 style="color:white;">Happy Birthday Bianca!</h1>
+                            <img src="photo_6_2026-04-29_00-41-58.jpg" class="cover-photo">
+                            <p style="color:white; margin-top:20px;">The End ✨</p>
+                        </div>
+                        <div class="page-content front-side">
+                            <h2 class="cursive-text" style="color:#333; text-shadow:none; font-size:2rem;">Are you
+                                ready?</h2>
+                            <button id="close-book-btn" class="nav-btn"
+                                style="position:relative; bottom:0; right:0; color:black; border-color:black; margin-top:20px;">Close
+                                Book</button>
+                        </div>
+                    </div>
+
+                    <!-- Page 2 -->
+                    <div class="page" id="page2" style="z-index: 2;">
+                        <div class="page-content back-side">
+                            <img src="photo_10_2026-04-29_00-41-58.jpg" class="polaroid-img"
+                                style="transform: rotate(-5deg);">
+                        </div>
+                        <div class="page-content front-side">
+                            <img src="photo_1_2026-04-29_00-41-58.jpg" class="polaroid-img"
+                                style="transform: rotate(5deg);">
+                            <p style="margin-top:20px; font-weight:bold; cursor:pointer; color:#ff69b4; font-size:1.2rem;"
+                                id="turn-page2">Flip Page ➔</p>
+                        </div>
+                    </div>
+
+                    <!-- Page 1 -->
+                    <div class="page" id="page1" style="z-index: 3;">
+                        <div class="page-content back-side">
+                            <img src="photo_2_2026-04-29_00-41-58.jpg" class="polaroid-img"
+                                style="transform: rotate(-3deg);">
+                        </div>
+                        <div class="page-content front-side">
+                            <img src="photo_9_2026-04-29_00-41-58.jpg" class="polaroid-img"
+                                style="transform: rotate(-2deg);">
+                            <p style="margin-top:20px; font-weight:bold; cursor:pointer; color:#ff69b4; font-size:1.2rem;"
+                                id="turn-page1">Flip Page ➔</p>
+                        </div>
+                    </div>
+
+                    <!-- Front Cover -->
+                    <div class="page" id="page-cover" style="z-index: 4;">
+                        <div class="page-content back-side">
+                            <img src="photo_5_2026-04-29_00-41-58.jpg" class="polaroid-img" style="transform: rotate(4deg);">
+                        </div>
+                        <div class="page-content front-side cover-design" id="open-book" style="cursor:pointer;">
+                            <h1 style="color:white;">Happy Birthday Bianca!</h1>
+                            <img src="flowers.png" class="cover-photo">
+                            <p
+                                style="color:white; margin-top:20px; font-size:1.2rem; animation: pulseHeart 1s infinite alternate;">
+                                Tap to Open ✨</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 4: Finale Mosaic -->
+        <div id="phase4" class="phase hidden">
+            <div id="mosaic-container"></div>
+            <div id="heart-message" class="hidden">Happy Birthday Bianca! 💖</div>
+        </div>
+
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="centered-item">
+        <button id="start-btn">Start the Magic ✨</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
